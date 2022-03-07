@@ -1,0 +1,15 @@
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+
+  img {
+    height: 40px;
+  }
+}
+
+:host {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 64px minmax(0, 1fr);
+}

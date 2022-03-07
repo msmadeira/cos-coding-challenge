@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+
+  <mat-divider inset></mat-divider>
+
+  <mat-card-content>
+    <form [formGroup]="loginForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="john.doe@example.com" formControlName="email" required>
+        <mat-error *ngIf="emailControl.invalid">{{ getErrorMessage() }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Password" formControlName="password" required>
+        <mat-error *ngIf="passwordControl.invalid">{{ requiredErrorText }}</mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-divider inset></mat-divider>
+
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary">Login</button>
+  </mat-card-actions>
+</mat-card>
