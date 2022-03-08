@@ -5,22 +5,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './features/login/login.module';
-import { LoginRequiredGuard } from './core/guards/login-required.guard';
 import { MaterialComponentsModule } from './shared/material-components/material-components.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     LoginModule,
+    CoreModule,
     BrowserAnimationsModule,
     MaterialComponentsModule,
   ],
   declarations: [
     AppComponent,
-  ],
-  providers: [
-    LoginRequiredGuard,
   ],
   bootstrap: [
     AppComponent,
