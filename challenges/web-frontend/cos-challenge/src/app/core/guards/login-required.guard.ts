@@ -9,6 +9,6 @@ export class LoginRequiredGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot,
               state: RouterStateSnapshot): boolean | UrlTree {
-    return !localStorage.getItem('authToken') ? this.router.parseUrl('login') : true;
+    return !localStorage.getItem('authentication') ? this.router.parseUrl('login') : true;
   }
 }

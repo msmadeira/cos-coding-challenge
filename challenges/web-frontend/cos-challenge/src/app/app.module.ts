@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './features/login/login.module';
 import { MaterialComponentsModule } from './shared/material-components/material-components.module';
 import { CoreModule } from './core/core.module';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { CoreModule } from './core/core.module';
   ],
   declarations: [
     AppComponent,
+    HeaderComponent,
   ],
   bootstrap: [
     AppComponent,

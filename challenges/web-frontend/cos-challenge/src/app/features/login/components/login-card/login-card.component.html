@@ -22,6 +22,8 @@
   <mat-divider inset></mat-divider>
 
   <mat-card-actions align="end">
-    <button mat-raised-button color="primary">Login</button>
+    <button mat-raised-button color="primary"
+            [disabled]="!loginForm.valid"
+            (click)="onLogin()">Login</button>
   </mat-card-actions>
 </mat-card>

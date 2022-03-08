@@ -9,6 +9,6 @@ export class LoginGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot,
               state: RouterStateSnapshot): boolean | UrlTree {
-    return !!localStorage.getItem('authToken') ? this.router.parseUrl('buyer-auctions') : true;
+    return !!localStorage.getItem('authentication') ? this.router.parseUrl('buyer-auctions') : true;
   }
 }

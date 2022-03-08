@@ -19,6 +19,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Developed using WebStorm, no chances to .vscode files where made 
 - Node v16.13.2
 - Didn't used mat-grid-list because of the poor support for responsiveness
+- I noticed some weird things in swagger models, (some properties where marked as required and didn't appear on the response or where not needed in the request)
 
 ## Development server
 
