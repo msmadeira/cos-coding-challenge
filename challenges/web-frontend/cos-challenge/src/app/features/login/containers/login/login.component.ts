@@ -10,7 +10,7 @@ import { LoginStore } from '../../state/login.store';
 })
 export class LoginComponent {
 
-  constructor(private loginStore: LoginStore) {
+  constructor(public loginStore: LoginStore) {
   }
 
   onLogin(formValue: LoginFormValue) {

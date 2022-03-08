@@ -35,7 +35,10 @@ export class LoginStore extends ComponentStore<LoginState> {
           this.loginService.login(payload.email, payload.password)
             .pipe(
               tapResponse(
-                authentication => this.authenticationService.authenticate(authentication),
+                authentication => {
+                  this.setLoggingIn(false);
+                  this.authenticationService.authenticate(authentication);
+                },
                 () => {
                   this.setLoggingIn(false);
                   this.snackBar.open(

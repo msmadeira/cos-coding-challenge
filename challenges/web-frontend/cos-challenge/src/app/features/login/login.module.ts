@@ -9,6 +9,7 @@ import { MaterialComponentsModule } from '../../shared/material-components/mater
 import { LoginCardComponent } from './components/login-card/login-card.component';
 import { LoginService } from './services/login.service';
 import { LoginStore } from './state/login.store';
+import { LoaderModule } from '../../shared/loader/loader.module';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { LoginStore } from './state/login.store';
     HttpClientModule,
     ReactiveFormsModule,
     MaterialComponentsModule,
+    LoaderModule,
   ],
   declarations: [
     LoginComponent,

@@ -1,0 +1,13 @@
+:host {
+  position: absolute;
+  height: calc(100% - 64px);
+  width: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+
+  .mat-spinner {
+    margin: 0 auto;
+  }
+}
