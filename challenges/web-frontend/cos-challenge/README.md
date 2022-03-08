@@ -5,7 +5,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Todo
 - [ ] Add eslint and prettier https://javascript.plainenglish.io/how-to-configure-eslint-and-prettier-on-angular-application-87dbd767369c
-- [ ] Change Header to be its own component
+- [X] Change Header to be its own component
+- [ ] Note that if a Non-Buyer registers, an error message should pop up.
 - [X] Relogin
 - [ ] Check expired tokens
 - [ ] Responsiveness

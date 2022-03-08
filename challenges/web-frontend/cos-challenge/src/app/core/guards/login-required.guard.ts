@@ -18,7 +18,6 @@ export class LoginRequiredGuard implements CanActivate {
     }
 
     if (!!this.authenticationService.authentication) {
-      console.log('sim');
       return this.authenticationService.validateToken()
         .pipe(map((v) => v ? v : this.router.parseUrl('login')));
     }
