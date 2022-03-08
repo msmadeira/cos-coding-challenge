@@ -41,7 +41,7 @@ export class LoginStore extends ComponentStore<LoginState> {
                 () => {
                   this.setLoggingIn(false);
                   this.snackBar.open(
-                    'User could not be authenticated. Please try again',
+                    'User could not be authenticated, please try again.',
                     'dismiss',
                     { duration: 2500 },
                   );

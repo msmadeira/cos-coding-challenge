@@ -51,9 +51,10 @@ export class AuthenticationService {
       token: this.authentication?.token,
     })
       .pipe(
-        map(() => {
+        map(({ token }: { token: string }) => {
           this.authenticate({
             ...this.authentication as Authentication,
+            token,
           });
 
           return true;
