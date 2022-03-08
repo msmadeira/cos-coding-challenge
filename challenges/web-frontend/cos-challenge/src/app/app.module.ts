@@ -7,20 +7,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './features/login/login.module';
 import { MaterialComponentsModule } from './shared/material-components/material-components.module';
 import { CoreModule } from './core/core.module';
-import { HeaderComponent } from './shared/header/header.component';
+import { HeaderModule } from './shared/header/header.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     LoginModule,
     CoreModule,
-    BrowserAnimationsModule,
     MaterialComponentsModule,
+    HeaderModule
   ],
   declarations: [
     AppComponent,
-    HeaderComponent,
   ],
   bootstrap: [
     AppComponent,

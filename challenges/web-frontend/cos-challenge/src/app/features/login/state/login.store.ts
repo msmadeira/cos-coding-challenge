@@ -5,45 +5,27 @@ import { switchMap, tap } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
-import { Authentication } from '../models/authentication.model';
 import { LoginService } from '../services/login.service';
 import { LoginFormValue } from '../models/login-form-value.model';
+import { AuthenticationService } from '../../../core/services/authentication.service';
 
 export interface LoginState {
-  authentication: {
-    entity: Authentication | undefined;
-    loggingIn: boolean;
-  };
+  loggingIn: boolean;
 }
 
 export const loginInitialState: LoginState = {
-  authentication: {
-    entity: undefined,
-    loggingIn: false,
-  },
+  loggingIn: false,
 };
 
 @Injectable()
 export class LoginStore extends ComponentStore<LoginState> {
 
-  readonly authentication$ = this.select(({ authentication: { entity } }) => entity);
-  readonly authenticationLoggingIn$ = this.select(({ authentication: { loggingIn } }) => loggingIn);
+  readonly loggingIn$ = this.select(({ loggingIn }: LoginState) => loggingIn);
 
   private readonly setLoggingIn = this.updater((state: LoginState, loggingIn: boolean) => ({
     ...state,
-    authentication: {
-      ...state.authentication,
-      loggingIn,
-    },
-  }));
-  private readonly loginSuccess = this.updater((state: LoginState, entity: Authentication) => ({
-    ...state,
-    authentication: {
-      ...state.authentication,
-      entity,
-      loggingIn: false,
-    },
-  }));
+    loggingIn,
+  }))
 
   readonly login = this.effect((data$: Observable<LoginFormValue>) =>
     data$
@@ -53,12 +35,7 @@ export class LoginStore extends ComponentStore<LoginState> {
           this.loginService.login(payload.email, payload.password)
             .pipe(
               tapResponse(
-                authentication => {
-                  this.loginSuccess(authentication);
-                  localStorage.setItem('authentication', JSON.stringify(authentication));
-
-                  this.router.navigate(['buyer-auctions']);
-                },
+                authentication => this.authenticationService.authenticate(authentication),
                 () => {
                   this.setLoggingIn(false);
                   this.snackBar.open(
@@ -75,7 +52,8 @@ export class LoginStore extends ComponentStore<LoginState> {
 
   constructor(private loginService: LoginService,
               private snackBar: MatSnackBar,
-              private router: Router) {
+              private router: Router,
+              private authenticationService: AuthenticationService) {
     super(loginInitialState);
   }
 }

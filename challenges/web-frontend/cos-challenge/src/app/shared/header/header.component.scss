@@ -1,0 +1,12 @@
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+
+  img {
+    height: 40px;
+  }
+}
+.example-spacer {
+  flex: 1 1 auto;
+}

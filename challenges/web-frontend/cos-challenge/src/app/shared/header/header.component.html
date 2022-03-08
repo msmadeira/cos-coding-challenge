@@ -1,1 +1,13 @@
-<p>header works!</p>
+<mat-toolbar color="primary">
+  <div class="logo-wrapper">
+    <img src="./assets/img/logo.svg" alt="caronsale logo" class="c-image">
+  </div>
+
+  <span>CarOnSale - Buyer Auctions</span>
+
+  <span class="toolbar-spacer"></span>
+
+  <button mat-button
+          *ngIf="isLoggedIn"
+          (click)="logout.emit()">Logout</button>
+</mat-toolbar>
