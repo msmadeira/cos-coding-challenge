@@ -1,6 +1,8 @@
-<cos-header [isLoggedIn]="authenticationService.isLoggedIn$ | async"
+<cos-header [isLoggedIn]="authenticationService.isLoggedIn"
             (logout)="onLogout()"></cos-header>
 
 <main>
+  <cos-loader *ngIf="authenticationService.validatingToken"></cos-loader>
+
   <router-outlet></router-outlet>
 </main>

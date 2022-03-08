@@ -5,7 +5,6 @@ import { switchMap, tap } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
-import { LoginService } from '../services/login.service';
 import { LoginFormValue } from '../models/login-form-value.model';
 import { AuthenticationService } from '../../../core/services/authentication.service';
 
@@ -32,7 +31,7 @@ export class LoginStore extends ComponentStore<LoginState> {
       .pipe(
         tap(() => this.setLoggingIn(true)),
         switchMap((payload: LoginFormValue) =>
-          this.loginService.login(payload.email, payload.password)
+          this.authenticationService.login(payload.email, payload.password)
             .pipe(
               tapResponse(
                 authentication => {
@@ -53,8 +52,7 @@ export class LoginStore extends ComponentStore<LoginState> {
       ),
   );
 
-  constructor(private loginService: LoginService,
-              private snackBar: MatSnackBar,
+  constructor(private snackBar: MatSnackBar,
               private router: Router,
               private authenticationService: AuthenticationService) {
     super(loginInitialState);

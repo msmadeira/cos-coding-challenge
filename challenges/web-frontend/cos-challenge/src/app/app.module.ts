@@ -8,6 +8,7 @@ import { LoginModule } from './features/login/login.module';
 import { MaterialComponentsModule } from './shared/material-components/material-components.module';
 import { CoreModule } from './core/core.module';
 import { HeaderModule } from './shared/header/header.module';
+import { LoaderModule } from './shared/loader/loader.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { HeaderModule } from './shared/header/header.module';
     LoginModule,
     CoreModule,
     MaterialComponentsModule,
-    HeaderModule
+    HeaderModule,
+    LoaderModule,
   ],
   declarations: [
     AppComponent,

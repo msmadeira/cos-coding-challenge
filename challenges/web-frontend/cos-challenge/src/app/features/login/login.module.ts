@@ -7,7 +7,6 @@ import { LoginComponent } from './containers/login/login.component';
 import { LoginGuard } from './guards/login.guard';
 import { MaterialComponentsModule } from '../../shared/material-components/material-components.module';
 import { LoginCardComponent } from './components/login-card/login-card.component';
-import { LoginService } from './services/login.service';
 import { LoginStore } from './state/login.store';
 import { LoaderModule } from '../../shared/loader/loader.module';
 
@@ -26,7 +25,6 @@ import { LoaderModule } from '../../shared/loader/loader.module';
   ],
   providers: [
     LoginGuard,
-    LoginService,
     LoginStore,
   ],
 })
