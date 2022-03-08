@@ -1,5 +1,7 @@
+<cos-loader *ngIf="buyerAuctionsStore.loading$ | async"></cos-loader>
+
 <div class="grid">
-  <span *ngFor="let n of [1,2,3,4]">
-    {{ n }}
+  <span *ngFor="let auction of (buyerAuctionsStore.entities$ | async)">
+    {{ auction.label }}
   </span>
 </div>

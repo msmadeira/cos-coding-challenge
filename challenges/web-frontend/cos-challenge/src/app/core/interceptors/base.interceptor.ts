@@ -19,12 +19,9 @@ export class BaseInterceptor implements HttpInterceptor {
       headers = headers
         .set('userid', authentication!.userId)
         .set('authtoken', authentication!.token);
-
-      // headers = headers
-      //   .set('Authorization', `${ authentication!.userId } / ${ authentication!.token }`);
     }
 
-    const req = request.clone({ url: `https://api-core-dev.caronsale.de/api/v1/${ request.url }`, headers });
+    const req = request.clone({ url: `https://api-core-dev.caronsale.de/api/${ request.url }`, headers });
 
     return next.handle(req);
   }

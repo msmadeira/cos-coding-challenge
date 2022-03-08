@@ -8,7 +8,7 @@ import { BuyerAuctionsStore } from '../../state/buyer-auctions.store';
 })
 export class BuyerAuctionsComponent implements OnInit {
 
-  constructor(private buyerAuctionsStore: BuyerAuctionsStore) {
+  constructor(public buyerAuctionsStore: BuyerAuctionsStore) {
   }
 
   ngOnInit() {

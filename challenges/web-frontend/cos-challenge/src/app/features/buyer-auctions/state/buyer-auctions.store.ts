@@ -4,11 +4,13 @@ import { Observable } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+
 import { BuyerAuctionsService } from '../services/buyer-auctions.service';
+import { BuyerAuctionView } from '../models/buyer-auction-view.model';
 
 
 export interface BuyerAuctionsState {
-  entities: unknown[];
+  entities: BuyerAuctionView[];
   loading: boolean;
 }
 
@@ -27,7 +29,7 @@ export class BuyerAuctionsStore extends ComponentStore<BuyerAuctionsState> {
     ...state,
     loading,
   }));
-  private readonly loadSuccess = this.updater((state: BuyerAuctionsState, entities: unknown[]) => ({
+  private readonly loadSuccess = this.updater((state: BuyerAuctionsState, entities: BuyerAuctionView[]) => ({
     ...state,
     entities,
     loading: false,

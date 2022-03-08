@@ -41,14 +41,14 @@ export class AuthenticationService {
   }
 
   login(email: string, password: string): Observable<Authentication> {
-    return this.httpClient.put<Authentication>(`authentication/${ email }`, { password });
+    return this.httpClient.put<Authentication>(`v1/authentication/${ email }`, { password });
   }
 
   validateToken(): Observable<boolean> {
     this.validatingToken = true;
 
-    return this.httpClient.post<{ token: string }>(`authentication/${ this.authentication?.userId }`, {
-      token: this.authentication?.token,
+    return this.httpClient.post<{ token: string }>(`v1/authentication/${ this.authentication?.userId }`, {
+      ...this.authentication,
     })
       .pipe(
         map(({ token }: { token: string }) => {
