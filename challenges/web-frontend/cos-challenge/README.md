@@ -21,4 +21,4 @@ Run `ng test` to execute the unit tests via [Jest](https://jestjs.io/).
 - Even though Angular Material was used, I choose to not use mat-grid-list because of the poor support for responsiveness.
 - I noticed inconsistencies in some Swagger models (required fields that where not really required) so I choose to only add in interfaces what was needed and some extras.
 - Didn't find the enum for Vehicle FuelType and Transmission, so I made my own enum, values should be a little inconsistent with the correct ones because of this.
-- I added search functionality to auctions passing `filter` to endpoint, but backend doesn't seem to be returning filtered values as expected. I left the functionality in code just in case.
+- I added search functionality to auctions passing `filter` to endpoint, but backend doesn't seem to be returning filtered values as expected. I guess I just got a little confused with the api documentation and expected request format.
