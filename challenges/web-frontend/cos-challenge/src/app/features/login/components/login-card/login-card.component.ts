@@ -28,7 +28,7 @@ export class LoginCardComponent {
     return this.loginForm.get('password')!;
   }
 
-  getErrorMessage(): string {
+  get errorMessage(): string {
     if (this.loginForm.get('email')!.hasError('required')) {
       return this.requiredErrorText;
     }
