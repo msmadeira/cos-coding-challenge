@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { debounceTime, distinctUntilChanged, interval, startWith, Subject, takeUntil } from 'rxjs';
+import { distinctUntilChanged, interval, startWith, Subject, takeUntil } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 
 import { BuyerAuctionsStore } from '../../state/buyer-auctions.store';

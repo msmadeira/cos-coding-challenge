@@ -1,4 +1,9 @@
 import { Authentication } from '../models/authentication.model';
+import {
+  BuyerAuctionView,
+  FuelType,
+  Transmission,
+} from '../../features/buyer-auctions/models/buyer-auction-view.model';
 
 export const mockedAuthentication: Authentication = {
   token: 'mocked-token',
@@ -8,4 +13,65 @@ export const mockedAuthentication: Authentication = {
   internalUserId: 1,
   type: 1,
   internalUserUUID: 'mocked-user-uuid'
+};
+
+export const mockedBuyerAuctionView: BuyerAuctionView = {
+  amIHighestBidder: false,
+  remainingTimeInSeconds: 40000,
+  currentHighestBidValue: 1000,
+  createdAt: new Date(),
+  id: 10,
+  locationCountryCode: 'BR',
+  locationZip: '90460030',
+  locationCity: 'Porto Alegre',
+  locationAddress: 'Bela Vista',
+  label: 'mocked-label',
+  amIRegularBuyer: false,
+  amIInvolved: false,
+  currentHighestBidValueNet: 1000,
+  endingTime: new Date(),
+  minimumRequiredAsk: 500,
+  numBids: 10,
+  originalMinimumRequiredAsk: 500,
+  updatedAt: new Date(),
+  startedAt: new Date(),
+  startingBidValue: 500,
+  sellerAccount: {
+    uuid: 'mocked-uuid',
+    name: 'mocked-name',
+    shouldApplyStandingCosts: false,
+  },
+  rating: {
+    createdAt: new Date(),
+    textFeedback: 'mocked-feedback',
+    value: 4,
+  },
+  associatedVehicle: {
+    mileageInKm: 1000,
+    createdAt: new Date(),
+    vin: 'mocked-vin',
+    doors: 2,
+    ez: 'mocked-ez',
+    licensePlate: 'IA31S',
+    estimatedValue: 1300,
+    fuelType: FuelType.Electric,
+    id: 'mocked-id',
+    hadAccident: false,
+    make: 'mocked-make',
+    hasDamages: false,
+    model: 'mocked-model',
+    vehicleImages: [{
+      createdAt: new Date(),
+      perspective: 10,
+      encoding: 'mocked-encoding',
+      mimeType: 'mocked-mime-type',
+      updatedAt: new Date(),
+      url: 'mocked-url',
+      uuid: 'mocked-uuid',
+    }],
+    uuid: 'mocked-uuid',
+    updatedAt: new Date(),
+    numSeats: 5,
+    transmission: Transmission.Automatic,
+  },
 };

@@ -55,11 +55,11 @@ describe('AppComponent', () => {
   });
 
   it('should hide loader when #validatingToken is false', () => {
-    authenticationService.validatingToken = true;
+    authenticationService.validatingToken = false
     fixture.detectChanges();
 
     const loader = fixture.debugElement.query(By.css('cos-loader'));
 
-    expect(loader).toBeTruthy();
+    expect(loader).toBeFalsy();
   });
 });

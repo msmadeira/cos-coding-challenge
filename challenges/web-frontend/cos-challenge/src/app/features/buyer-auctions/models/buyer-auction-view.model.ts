@@ -29,7 +29,7 @@ interface Vehicle {
   licensePlate: string;
   createdAt: Date;
   updatedAt: Date;
-  deletedAt: Date;
+  deletedAt?: Date;
 }
 
 interface VehicleImages {
@@ -40,8 +40,7 @@ interface VehicleImages {
   url: string;
   createdAt: Date;
   updatedAt: Date;
-  deletedAt: Date;
-  rawData: unknown;
+  deletedAt?: Date;
 }
 
 export enum FuelType {
