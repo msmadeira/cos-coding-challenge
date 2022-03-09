@@ -35,7 +35,7 @@ export class BuyerAuctionsStore extends ComponentStore<BuyerAuctionsState> {
     loading: false,
   }));
 
-  readonly login = this.effect((data$: Observable<string>) =>
+  readonly load = this.effect((data$: Observable<string>) =>
     data$
       .pipe(
         tap(() => this.setLoading(true)),

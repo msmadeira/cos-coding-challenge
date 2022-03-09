@@ -1,3 +1,32 @@
-.grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+:host {
+  display: block;
+
+  .search-wrapper {
+    display: flex;
+    position: relative;
+    margin: 24px 48px;
+    padding: 16px;
+    background: #424242;
+
+    input {
+      padding: 8px 40px 8px 8px;
+      width: 100%;
+    }
+
+    .icon-wrapper {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      bottom: 16px;
+    }
+  }
+
+  .grid {
+    display: grid;
+    padding: 0 48px 24px 48px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
 }

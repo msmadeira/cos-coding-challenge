@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { LoginFormValue } from '../../models/login-form-value.model';
@@ -7,6 +7,7 @@ import { LoginFormValue } from '../../models/login-form-value.model';
   selector: 'cos-login-card',
   templateUrl: './login-card.component.html',
   styleUrls: ['./login-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginCardComponent {
 

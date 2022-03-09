@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ auction?.label }}</mat-card-title>
+    <mat-card-subtitle>{{ formattedAddress }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img mat-card-image alt="" *ngIf="!!vehicleImage" [src]="vehicleImage">
+
+  <mat-card-content>
+    <p>Mileage: {{ auction?.associatedVehicle?.mileageInKm }}</p>
+    <p>EZ: {{ auction?.associatedVehicle?.ez }}</p>
+    <p>Fuel Type: {{ fuelType }}</p>
+    <p>Transmission: {{ transmission }}</p>
+
+    <div>
+      <mat-icon inline color="warn">attach_money</mat-icon>
+      Highest Bid: € {{ auction?.currentHighestBidValue }}
+    </div>
+
+    <div>
+      <mat-icon inline color="warn">access_time</mat-icon>
+      Remaining Time: {{ formattedRemainingTime }}
+    </div>
+
+    <div class="chip-wrapper" *ngIf="auction?.amIHighestBidder">
+      <mat-chip-list>
+        <mat-chip color="primary" selected>I am the highest bidder</mat-chip>
+      </mat-chip-list>
+    </div>
+  </mat-card-content>
+</mat-card>

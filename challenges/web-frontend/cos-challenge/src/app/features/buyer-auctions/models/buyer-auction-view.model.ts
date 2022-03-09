@@ -1,28 +1,3 @@
-export interface BuyerAuctionView {
-  id: number;
-  label: string;
-  endingTime: Date;
-  amIInvolved: boolean;
-  amIRegularBuyer: boolean;
-  sellerAccount: SellerAccount;
-  rating: Auction;
-  remainingTimeInSeconds: number;
-  startedAt: Date;
-  startingBidValue: number;
-  currentHighestBidValue: number;
-  currentHighestBidValueNet: number;
-  minimumRequiredAsk: number;
-  originalMinimumRequiredAsk: number;
-  numBids: number;
-  associatedVehicle: Vehicle;
-  locationCountryCode: string;
-  locationAddress: string;
-  locationCity: string;
-  locationZip: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
 interface SellerAccount {
   uuid: string;
   name: string;
@@ -43,8 +18,8 @@ interface Vehicle {
   model: string;
   mileageInKm: number;
   ez: string;
-  transmission: number; // todo
-  fuelType: number; // todo
+  transmission: Transmission;
+  fuelType: FuelType;
   numSeats: number;
   doors: number;
   hadAccident: boolean;
@@ -68,3 +43,49 @@ interface VehicleImages {
   deletedAt: Date;
   rawData: unknown;
 }
+
+export enum FuelType {
+  Gasoline,
+  Ethanol,
+  NaturalGas,
+  Diesel,
+  BioDiesel,
+  Electric,
+  Hybrid,
+  BioFuel,
+  Hydrogen,
+}
+
+export enum Transmission {
+  Automatic,
+  SemiAutomatic,
+  Manual,
+}
+
+export interface BuyerAuctionView {
+  id: number;
+  label: string;
+  endingTime: Date;
+  amIInvolved: boolean;
+  amIRegularBuyer: boolean;
+  amIHighestBidder: boolean;
+  sellerAccount: SellerAccount;
+  rating: Auction;
+  remainingTimeInSeconds: number;
+  startedAt: Date;
+  startingBidValue: number;
+  currentHighestBidValue: number;
+  currentHighestBidValueNet: number;
+  minimumRequiredAsk: number;
+  originalMinimumRequiredAsk: number;
+  numBids: number;
+  associatedVehicle: Vehicle;
+  locationCountryCode: string;
+  locationAddress: string;
+  locationCity: string;
+  locationZip: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+
