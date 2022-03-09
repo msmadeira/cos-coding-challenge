@@ -4,7 +4,7 @@
   .search-wrapper {
     display: flex;
     position: relative;
-    margin: 24px 48px;
+    grid-column: 1 / span 3;
     padding: 16px;
     background: #424242;
 
@@ -25,6 +25,14 @@
 }
 
 .grid {
-  padding: 0 48px 24px 48px;
+  padding: 24px 48px 24px 48px;
   gap: 24px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  :host .search-wrapper {
+    grid-column: inherit;
+  }
 }

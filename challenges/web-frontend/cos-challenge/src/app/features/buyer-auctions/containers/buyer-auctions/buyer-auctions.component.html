@@ -1,11 +1,11 @@
 <cos-loader *ngIf="buyerAuctionsStore.loading$ | async"></cos-loader>
 
-<div class="search-wrapper">
-  <input type="text" placeholder="Search" [formControl]="searchControl">
-  <div class="icon-wrapper"><mat-icon>search</mat-icon></div>
-</div>
-
 <div class="grid cols-3">
+  <div class="search-wrapper">
+    <input type="text" placeholder="Search" [formControl]="searchControl">
+    <div class="icon-wrapper"><mat-icon>search</mat-icon></div>
+  </div>
+
   <cos-buyer-auction-card *ngFor="let auction of (buyerAuctionsStore.entities$ | async)"
                           [auction]="auction"></cos-buyer-auction-card>
 </div>

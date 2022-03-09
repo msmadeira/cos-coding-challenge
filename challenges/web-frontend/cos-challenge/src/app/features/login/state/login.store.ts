@@ -36,7 +36,16 @@ export class LoginStore extends ComponentStore<LoginState> {
               tapResponse(
                 authentication => {
                   this.setLoggingIn(false);
-                  this.authenticationService.authenticate(authentication);
+
+                  if (authentication.privileges.indexOf('SALESMAN_USER') !== -1) {
+                    this.authenticationService.authenticate(authentication);
+                  } else {
+                    this.snackBar.open(
+                      'Access denied, user is not a buyer.',
+                      'dismiss',
+                      { duration: 2500 },
+                    );
+                  }
                 },
                 () => {
                   this.setLoggingIn(false);
