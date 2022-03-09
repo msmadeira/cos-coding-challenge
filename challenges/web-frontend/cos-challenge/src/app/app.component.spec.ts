@@ -1,11 +1,28 @@
 import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 import { AppComponent } from './app.component';
+import { AuthenticationService } from './core/services/authentication.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        HttpClientModule,
+        MatSnackBarModule,
+      ],
       declarations: [
-        AppComponent
+        AppComponent,
+      ],
+      providers: [
+        AuthenticationService,
+      ],
+      schemas: [
+        NO_ERRORS_SCHEMA,
       ],
     }).compileComponents();
   });
@@ -14,18 +31,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'cos-challenge'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('cos-challenge');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('cos-challenge app is running!');
   });
 });

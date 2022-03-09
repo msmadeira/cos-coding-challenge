@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { Authentication } from '../../features/login/models/authentication.model';
+import { Authentication } from '../models/authentication.model';
 
 @Injectable()
 export class AuthenticationService {
