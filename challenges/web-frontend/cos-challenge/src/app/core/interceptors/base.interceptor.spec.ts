@@ -6,7 +6,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import { BaseInterceptor } from './base.interceptor';
 import { AuthenticationService } from '../services/authentication.service';
-import { mockedAuthentication } from '../utils/test.utils';
+import { mockedAuthentication } from '../../utils/test.utils';
 
 describe('BaseInterceptor', () => {
   let authenticationService: AuthenticationService;

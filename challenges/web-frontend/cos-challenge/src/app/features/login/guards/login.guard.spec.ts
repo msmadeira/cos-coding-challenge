@@ -6,7 +6,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { LoginGuard } from './login.guard';
 import { AuthenticationService } from '../../../core/services/authentication.service';
-import { mockedAuthentication } from '../../../core/utils/test.utils';
+import { mockedAuthentication } from '../../../utils/test.utils';
 
 describe('LoginGuard', () => {
   let guard: LoginGuard;

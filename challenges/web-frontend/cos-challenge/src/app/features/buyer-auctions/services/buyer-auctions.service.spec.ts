@@ -2,7 +2,7 @@ import { TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { BuyerAuctionsService } from './buyer-auctions.service';
-import { mockedBuyerAuctionView } from '../../../core/utils/test.utils';
+import { mockedBuyerAuctionView } from '../../../utils/test.utils';
 
 describe('BuyerAuctionsService', () => {
   let service: BuyerAuctionsService;

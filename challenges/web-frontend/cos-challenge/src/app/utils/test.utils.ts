@@ -1,9 +1,9 @@
-import { Authentication } from '../models/authentication.model';
+import { Authentication } from '../core/models/authentication.model';
 import {
   BuyerAuctionView,
   FuelType,
   Transmission,
-} from '../../features/buyer-auctions/models/buyer-auction-view.model';
+} from '../features/buyer-auctions/models/buyer-auction-view.model';
 
 export const mockedAuthentication: Authentication = {
   token: 'mocked-token',
