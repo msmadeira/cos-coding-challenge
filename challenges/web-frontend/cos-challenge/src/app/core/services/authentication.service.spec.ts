@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { AuthenticationService } from './authentication.service';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientModule } from '@angular/common/http';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe('AuthenticationService', () => {
   let service: AuthenticationService;
@@ -12,7 +12,7 @@ describe('AuthenticationService', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpClientModule,
+        HttpClientTestingModule,
         MatSnackBarModule,
       ],
       providers: [
