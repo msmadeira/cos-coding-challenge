@@ -1,11 +1,9 @@
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0 48px 24px 48px;
   height: 100%;
 
   .login-card-column {
     display: flex;
     align-items: center;
-    grid-column-start: 2;
   }
 }

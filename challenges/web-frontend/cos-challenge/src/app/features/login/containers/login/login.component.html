@@ -1,7 +1,7 @@
 <cos-loader *ngIf="loginStore.loggingIn$ | async"></cos-loader>
 
-<div class="grid">
-  <div class="login-card-column">
+<div class="grid cols-3">
+  <div class="login-card-column start-col-2">
     <cos-login-card (login)="onLogin($event)"></cos-login-card>
   </div>
 </div>

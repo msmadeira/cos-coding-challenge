@@ -5,7 +5,7 @@
   <div class="icon-wrapper"><mat-icon>search</mat-icon></div>
 </div>
 
-<div class="grid">
+<div class="grid cols-3">
   <cos-buyer-auction-card *ngFor="let auction of (buyerAuctionsStore.entities$ | async)"
                           [auction]="auction"></cos-buyer-auction-card>
 </div>
